@@ -4,26 +4,30 @@ The distributed operation layer (DOL) is a framework that enables the (semi-) au
 - DOL Application Programming Interface
 - DOL Functional Simulation
 - DOL Mapping Optimization
+
 ## How to install
-1. **安装一些必要的环境（ubuntu为例）：**
++ 1. **安装一些必要的环境（ubuntu为例）：**
 ```
     $	sudo apt-get update
     $	sudo apt-get install ant
     $ 	sudo apt-get install openjdk-7-jdk
     $	sudo apt-get install unzip
 ```
-2. **直接用命令行下载文件到虚拟机中**
+
++ 2. **直接用命令行下载文件到虚拟机中**
 ```
     $   sudo wget http://www.accellera.org/images/downloads/standards/systemc/systemc-2.3.1.tgz
     $   sudo wget http://www.tik.ee.ethz.ch/~shapes/downloads/dol_ethz.zip
 ```
-3. **解压文件**
+
++ 3. **解压文件**
 ```
     $	mkdir dol                       //新建dol的文件夹
     $	unzip dol_ethz.zip -d dol       //将dolethz.zip解压到 dol文件夹中
     $	tar -zxvf systemc-2.3.1.tgz     //解压systemc
 ```
-4. **编译systemc**
+
++ 4. **编译systemc**
 ```
     $	cd systemc-2.3.1                //解压后进入systemc-2.3.1的目录下
     $	mkdir objdir                    //新建一个临时文件夹objdir
@@ -35,7 +39,8 @@ The distributed operation layer (DOL) is a framework that enables the (semi-) au
 
 &ensp;　　pwd的结果：  
 &ensp;　　![](https://github.com/ybCliff/Screenshot/blob/master/pwd_result.png?raw=true)
-5. **编译dol**
+
++ 5. **编译dol**
 ```
     $	cd ../dol                       //进入刚刚dol的文件夹
 ```
@@ -53,13 +58,15 @@ The distributed operation layer (DOL) is a framework that enables the (semi-) au
 ```
 &ensp;　　编译结果如下：  
 &ensp;　　![](https://github.com/ybCliff/Screenshot/blob/master/build_successful.jpg?raw=true)
-6. **运行example 1来检验是否配置成功**
+
++ 6. **运行example 1来检验是否配置成功**
 ```
     $	cd build/bin/main                   //进入build/bin/mian路径下
     $	ant -f runexample.xml -Dnumber=1    //运行第一个例子
 ```
 &ensp;　　成功结果如下：  
 &ensp;　　![](https://github.com/ybCliff/Screenshot/blob/master/example_result.jpg?raw=true)
+
 ## Experimental experience
 &emsp;　这次实验按照Ta所给的PPT流程操作下来，并没有遇到太多的困难，主要是虚拟机一开始是中文系统，所以在最后运行example 1的时候并没有成功。后来将系统转回英文，就可以了。  
 &emsp;　这次最大的收获其实是对markdown和github的了解。在本md文件中，由于使用了图片需要加入URL，因此我在github上建立了一个仓库，专门用来存放我的结果截图，然后复制图片链接地址即可得到URL。  
