@@ -1,57 +1,57 @@
 ## LAB5: 配置ROS及cartographer
 ### 安装过程
 #### ROS
-1. **Setup your sources.list**
+1. **Setup your sources.list**  
 ```  
     $	sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 ```  
 
-2. **Set up your keys**
+2. **Set up your keys**  
 ```  
     $   sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 0xB01FA116
 ```  
 
-3. **Installation**
+3. **Installation**  
 ```
     $	sudo apt-get update
 	$	sudo apt-get install ros-jade-desktop-full
 ```  
 
-4. **Initialize rosdep**
+4. **Initialize rosdep**  
 ```
     $	sudo rosdep init
     $	rosdep update
 ```   
 
-5. **Environment setup**
+5. **Environment setup**  
 ```
 	$	echo "source /opt/ros/jade/setup.bash" >> ~/.bashrc
 	$	source ~/.bashrc
 ```  
 
-6. **Getting rosinstall**
+6. **Getting rosinstall**  
 ```
 	$	sudo apt-get install python-rosinstall
 ```  
 
-check_ros_package结果：  
-![](https://github.com/ybCliff/Screenshot/blob/master/check_ros_package_path.jpg?raw=true)
+check_ros_package结果：    
+![](https://github.com/ybCliff/Screenshot/blob/master/check_ros_package_path.jpg?raw=true)  
 
-#### cartographer
-1. **Install wstool and rosdep**
+#### cartographer  
+1. **Install wstool and rosdep**  
 ```
 	$	sudo apt-get update
 	$	sudo apt-get install -y python-wstool python-rosdep ninja-build
 ```  
 
-2. **Create a new workspace in 'catkin_ws'**
+2. **Create a new workspace in 'catkin_ws'**  
 ```
 	$	mkdir catkin_ws
 	$	cd catkin_ws
 	$	wstool init src
 ```  
 
-3. **Install ceres solver**
+3. **Install ceres solver**  
 ```
     $	git clone https://github.com/hitcm/ceres-solver-1.11.0.git
 	$	cd ceres-solver-1.11.0/build
@@ -60,7 +60,7 @@ check_ros_package结果：
 	$	sudo make install
 ```  
 
-4. **Install cartographer**
+4. **Install cartographer**  
 ```
 	$	git clone https://github.com/hitcm/cartographer.git
 	$	cd cartographer/build
@@ -72,7 +72,7 @@ check_ros_package结果：
 ninja test结果：
 ![](https://github.com/ybCliff/Screenshot/blob/master/ninja_test_success.jpg?raw=true)  
 
-5. **Install cartographer_ros**
+5. **Install cartographer_ros**  
 ```
 	$	cd catkin_ws/src
 	$	git clone https://github.com/hitcm/cartographer_ros.git
